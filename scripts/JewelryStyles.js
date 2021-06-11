@@ -5,6 +5,8 @@ const styles = getStyles()
 document.addEventListener(
     "change",
     (event) => {
+        if (event.target.name === "style")
+            window.alert(``)
     }
 )
 
@@ -12,7 +14,11 @@ export const JewelryStyles = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
-    const listItemsArray =
+    const listItems = styles.map(style => {
+        return `<li>
+            <input type="radio" name ="style" value="${style.id}" /> ${styles.style}
+            </li>`
+    })
 
 
     // Join all of the strings in the array into a single string
