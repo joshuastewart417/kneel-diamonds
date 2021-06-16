@@ -25,6 +25,3 @@ export const DiamondSizes = () => {
   return html;
 };
 
- /* export const setSize = (setSizeState) => {
-      database.orderBuilder.styleId = setSizeState
-  };*/
