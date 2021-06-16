@@ -24,6 +24,3 @@ export const JewelryStyles = () => {
   return html;
 };
   
- /* export const setSize = (setSizeState) => {
-    database.orderBuilder.sizeId = setSizeState
-  };*/

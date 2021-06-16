@@ -6,7 +6,11 @@
 
 */
 const database = {
-  orderBuilder: {},
+  orderBuilder: {
+    metalId: "",
+    sizeId: "",
+    styleId: ""
+  },
   styles: [
     { id: 1, style: "Classic", price: 500 },
     { id: 2, style: "Modern", price: 710 },
@@ -28,25 +32,25 @@ const database = {
   ],
   customOrders: [
     {
-      id: "",
-      metalId: "",
-      sizeId: "",
-      styleId: "",
-      timestamp: "",
+      id: 1,
+      metalId: 2,
+      sizeId: 2,
+      styleId: 2,
+      timestamp: 123456,
     },
   ],
 };
 
-export const setMetal = (setMetalState) => {
-  database.orderBuilder.metalId = setMetalState;
+export const setMetal = (id) => {
+  database.orderBuilder.metalId = id;
 };
 
-export const setSize = (setSizeState) => {
-  database.orderBuilder.sizeId = setSizeState;
+export const setSize = (id) => {
+  database.orderBuilder.sizeId = id;
 };
 
-export const setStyle = (setStyleState) => {
-  database.orderBuilder.styleId = setStyleState;
+export const setStyle = (id) => {
+  database.orderBuilder.styleId = id;
 };
 
 export const getMetals = () => {
@@ -69,7 +73,7 @@ export const addCustomOrder = () => {
   // Copy the current state of user choices
   const newOrder = { ...database.orderBuilder };
 
-  //Add a new primary key to object
+  // Add a new primary key to the object
   const lastIndex = database.customOrders.length - 1;
   newOrder.id = database.customOrders[lastIndex].id + 1;
 
